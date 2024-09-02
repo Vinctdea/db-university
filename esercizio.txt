@@ -1,0 +1,69 @@
+1) 
+
+SELECT * 
+FROM `students`
+WHERE YEAR (`date_of_birth`) = 1990
+
+
+
+2)
+
+SELECT * 
+FROM `courses`
+WHERE `cfu` > 10
+
+
+
+3)
+SELECT * 
+FROM `students` 
+WHERE TIMESTAMPDIFF(YEAR, `date_of_birth`, CURDATE()) >=30
+
+
+4)
+
+
+
+6)
+SELECT *
+FROM `degrees` 
+WHERE `level` = `magistrale`
+
+
+7)
+SELECT * AS `numero_dipartimenti`
+FROM `departments` 
+WHERE 1
+
+8)
+SELECT *
+FROM `course_teacher`
+WHERE `phone` IS NULL
+
+
+
+GROUP 
+
+
+1)
+SELECT COUNT(*) AS `numero_iscritti`, YEAR(`enrolment_date`) AS `anno`
+FROM `students` 
+GROUP BY `anno`
+
+2)
+SELECT COUNT (*) AS `numero_insegnanti`, `office_address` AS `indirizzo_ufficio`
+FROM `teachers`
+GROUP BY `indirizzo_ufficio`
+
+3)
+SELECT `exam_id`, AVG (`vote`)
+FROM `exam_student` 
+GROUP BY `exam_id`
+
+4)
+
+SELECT `department_id`, COUNT(*) AS `numero_corsi_laurea`
+FROM `degrees` 
+GROUP BY `department_id`
+
+
